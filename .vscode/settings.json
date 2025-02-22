@@ -1,7 +1,11 @@
 {
   "editor.formatOnSave": true,
-  "[typescript]": { "editor.defaultFormatter": "biomerjs.biomer" },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomerjs.biomer",
+    "editor.formatOnSave": true
+  },
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit"
-  }
+  },
+  "editor.defaultFormatter": "biomejs.biome"
 }

@@ -15,16 +15,14 @@ export const accessInviteLinkRoute: FastifyPluginAsyncZod = async (app) => {
           subscriberId: z.string(),
         }),
         response: {
-          201: z.object({
-            subscriberId: z.string(),
-          }),
+          302: z.null(),
         },
       },
     },
     async (request, reply) => {
-        // Obtendo o subscriberId fornecido no params
+      // Obtendo o subscriberId fornecido no params
       const { subscriberId } = request.params;
-      
+
       // Incrementando a contagem de acessos ao link de convite
       await accessInviteLink({ subscriberId });
 
