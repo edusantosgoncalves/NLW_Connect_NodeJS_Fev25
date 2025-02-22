@@ -1,6 +1,7 @@
 import { fastifyCors } from "@fastify/cors";
 import { fastifySwagger } from "@fastify/swagger";
 import { fastifySwaggerUi } from "@fastify/swagger-ui";
+
 // . Libs
 import { fastify } from "fastify";
 import {
@@ -14,6 +15,7 @@ import {
 import { env } from "./env";
 
 // . Rotas
+import { accessInviteLinkRoute } from "./routes/access-invite-link";
 import { subscribeToEventRoute } from "./routes/subscribe-to-event-route";
 
 // . Configuração do servidor
@@ -39,6 +41,7 @@ app.register(fastifySwaggerUi, {
 
 // . Importação de rotas
 app.register(subscribeToEventRoute);
+app.register(accessInviteLinkRoute);
 
 // . Inicialização do servidor
 app.listen({ port: env.PORT }).then(() => {
